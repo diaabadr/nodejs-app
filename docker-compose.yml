@@ -1,0 +1,18 @@
+version: '3'
+services:
+  express-app:
+    container_name: express-app-container
+    ports:
+      - "3000:3000"
+    env_file:
+      - ./.env
+  mongo:
+    image: mongo
+    restart: always
+    volumes:
+      - mongo-db:/data/db
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: example  
+volumes:
+  mongo-db:    
