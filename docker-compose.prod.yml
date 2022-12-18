@@ -6,4 +6,5 @@ services:
       target: production
     environment:
       - NODE_ENV=Production  
-    command: npm start  
+    command: npm start
+    
