@@ -6,8 +6,6 @@ services:
       - "3000:3000"
     env_file:
       - ./.env
-    depends_on:
-      - mongo
   nginx:
     image: nginx:stable-alpine
     ports:
@@ -18,16 +16,4 @@ services:
       - express-app  
 
 
-  mongo:
-    image: mongo
-    restart: always
-    volumes:
-      - mongo-db:/data/db
-    environment:
-      MONGO_INITDB_ROOT_USERNAME: root
-      MONGO_INITDB_ROOT_PASSWORD: example  
-
-
-
-volumes:
-  mongo-db:    
+ 
